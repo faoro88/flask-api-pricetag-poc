@@ -1,0 +1,26 @@
+train: ../../train_labels/images/train/  # train images (relative to 'path') 128 images
+val: ../../train_labels/images/val/
+test:  # test images (optional)
+
+# Classes
+names:
+  0: price
+
+
+# Download script/URL (optional)
+# download: https://ultralytics.com/assets/coco128-seg.zip
+
+# Download script/URL (optional)
+
+# Para fazer o treinamento e ler a bandeirola 
+# python train.py --img 640 --batch 2 --epochs 2000 --data bandeirola.yaml --weights yolov5s.pt --cache
+
+# Para fazer o treinamento e ler a pricetag
+# python train.py --img 640 --batch 2 --epochs 2000 --data pricelabel.yaml --weights yolov5s.pt --cache
+
+# Para fazer a detecção das BANDEIROLAS
+# python detect.py --conf-thres=0.65 --weights ./runs/train/exp5/weights/best.pt --source ..train_labels/images/train
+
+# Para fazer a detecção das PRICETAGS
+# python detect.py --conf-thres=0.65 --weights ./runs/train/exp4/weights/best.pt --source ..train_labels/images/train
+# python detect.py --conf-thres=0.65 --weights ./runs/train/exp4/weights/best.pt --source ./runs/detect/exp81/crops/bandeirola
