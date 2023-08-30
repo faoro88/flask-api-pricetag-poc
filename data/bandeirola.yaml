@@ -1,0 +1,19 @@
+train: ../../train/images/train/  # train images (relative to 'path') 128 images
+val: ../../train/images/val/  # val images (relative to 'path') 128 images
+
+test:  # test images (optional)
+
+# Classes
+names:
+  0: bandeirola
+
+
+# Download script/URL (optional)
+download: https://ultralytics.com/assets/coco128-seg.zip
+
+# Download script/URL (optional)
+
+# python train.py --img 640 --batch 2 --epochs 2000 --data bandeirola.yaml --weights yolov5s.pt --cache
+# python detect.py --conf-thres=0.65 --weights ./runs/train/exp4/weights/best.pt --source ../train_labels/images/train 
+
+
