@@ -86,9 +86,11 @@ def run(
         dnn=False,  # use OpenCV DNN for ONNX inference
         vid_stride=1,  # video frame-rate stride
         second_run= False, #uses the last run path as source
+        ctr= 0,
 ):
     # Directories
     products = {"products": []}
+    open('Products.json', 'w').close()
     if second_run:
         save_dir = increment_path(Path(project) / name, exist_ok=exist_ok, secondrun= second_run)  # increment run
         (save_dir / 'labels' if save_txt else save_dir).mkdir(parents=True, exist_ok=True)  # make dir
@@ -198,13 +200,15 @@ def run(
                         with open(f'{txt_path}.txt', 'a') as f:
                             f.write(('%g ' * len(line)).rstrip() % line + '\n')
 
-                    if save_img or save_crop or view_img:  # Add bbox to image
+                    if save_img or save_crop or view_img:
+                        print('entrou auqi')  # Add bbox to image
+                        ctr = ctr + 1
                         c = int(cls)  # integer class
                         label = None if hide_labels else (names[c] if hide_conf else f'{names[c]} {conf:.2f}')
                         annotator.box_label(xyxy, label, color=colors(c, True))
                         save_one_box(xyxy, imc, file=save_dir / 'crops' / names[c] / f'{p.stem}.jpg', BGR=True)
                         # print(save_dir / 'crops' / names[c] / f'{p.stem}.jpg')
-                        if second_run:
+                        if second_run and ctr > 0 :
                             print('pricetag local: ', save_dir / 'crops' / 'price' / f'{p.stem}.jpg')
                             price_tag_result = pytesseract.image_to_string(Image.open(save_dir / 'crops' / 'price' / f'{p.stem}.jpg'), config='--psm 10 --oem 3 -c tessedit_char_whitelist=0123456789')
                             # if price_tag_result:
@@ -227,7 +231,7 @@ def run(
                             with open("Products.json", "w") as arquivo:     
                                 json.dump(products, arquivo, indent=4)
                             
-                    if save_crop:
+                    if save_crop and ctr > 1:
                         save_one_box(xyxy, imc, file=save_dir / 'crops' / names[c] / f'{p.stem}.jpg', BGR=True)
 
             # Stream results

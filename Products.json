@@ -1,52 +1,16 @@
 {
     "products": [
         {
-            "price": "13\n",
-            "barcode": "0"
-        },
-        {
-            "price": "",
-            "barcode": "0"
-        },
-        {
             "price": "6\n",
-            "barcode": "0"
+            "barcode": "b'381225'"
         },
         {
-            "price": "9\n",
-            "barcode": "b'109899'"
+            "price": "7\n",
+            "barcode": "b'501930'"
         },
         {
-            "price": "",
-            "barcode": "b'109854'"
-        },
-        {
-            "price": "154\n",
-            "barcode": "0"
-        },
-        {
-            "price": "9\n",
-            "barcode": "0"
-        },
-        {
-            "price": "13\n",
-            "barcode": "0"
-        },
-        {
-            "price": "241\n",
-            "barcode": "0"
-        },
-        {
-            "price": "9\n",
-            "barcode": "b'109897'"
-        },
-        {
-            "price": "",
-            "barcode": "0"
-        },
-        {
-            "price": "6\n",
-            "barcode": "0"
+            "price": "7\n",
+            "barcode": "b'501930'"
         }
     ]
 }
