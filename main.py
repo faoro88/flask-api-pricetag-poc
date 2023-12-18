@@ -38,7 +38,7 @@ def foo():
     img.save('123123.jpg')
 
     # SOURCE DA CAMERA 
-    os.system("python detect.py --conf-thres=0.65 --weights ./runs/train/exp5/weights/best.pt --source ./123123.png")
+    os.system("python detect.py --conf-thres=0.65 --weights ./runs/train/exp5/weights/best.pt --source ./555.png")
     os.system("python detect.py --second-run true --conf-thres=0.35 --weights ./runs/train/exp4/weights/best.pt")
     
     # SOURCE MOCADA, IMAGEM 555.jpg 
