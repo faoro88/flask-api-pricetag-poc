@@ -27,7 +27,6 @@ tqdm>=4.64.0
 pytesseract>=0.3.10
 pyzbar>=0.1.9
 
-
 # protobuf<=3.20.1  # https://github.com/ultralytics/yolov5/issues/8012
 
 # Logging ---------------------------------------------------------------------
