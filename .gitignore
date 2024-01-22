@@ -158,4 +158,6 @@ pyvenv.cfg
 pip-selfcheck.json
 .json
 
+.git
+
 # End of https://www.toptal.com/developers/gitignore/api/python
