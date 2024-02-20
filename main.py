@@ -30,9 +30,9 @@ def index():
     print(data)
     return jsonify(data)
 
-@app.route('/') 
-def index():
-    return 'response'
+@app.route('/hello') 
+def hello():
+    return 'Hello, world'
 
 @app.route('/imgpost', methods=['POST']) 
 def foo():
