@@ -30,6 +30,10 @@ def index():
     print(data)
     return jsonify(data)
 
+@app.route('/') 
+def index():
+    return 'response'
+
 @app.route('/imgpost', methods=['POST']) 
 def foo():
     data = request.json
